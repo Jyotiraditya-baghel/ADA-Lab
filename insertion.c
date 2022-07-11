@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<math.h>
-id insertionSort(int arr[],int n)
+void insertionSort(int arr[],int n)
 {
-    int i, key j;
+    int i, key, j;
     for(i=1; i<n; i++) {
         key = arr[i];
         j = i-1;
@@ -22,9 +22,16 @@ void printArray(int arr[], int n)
 }
  int main()
 {
-    int arr[] = { 12, 11, 13, 5, 6 };
-    int n = sizeof(arr) / sizeof(arr[0]);
- 
+    int n;
+    printf("ENTER SIZE OF = ");
+    scanf("%d",&n);
+    int arr[n];
+    printf("ENTER ARRAY ELEMENTS = ");
+    for (int j = 0; j < n; j++)
+        {
+            arr[j] = (rand() % 1000) + 1;
+            printf("%4d", arr[j]);
+        }
     insertionSort(arr, n);
     printArray(arr, n);
  
